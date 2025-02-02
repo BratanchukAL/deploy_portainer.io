@@ -11,5 +11,8 @@ Agent:
     
     docker compose --file agent.docker-compose.yaml  --env-file ./portainer.env  up -d --force-recreate --remove-orphans
 
+# Versions compatibility remote deploy by git
+- portainer-ce:2.21.5
+
 # TODO
 P-1: server and agent
