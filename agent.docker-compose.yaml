@@ -7,6 +7,7 @@ services:
         ports:
             - 9001:9001
         environment:
+#            - LOG_LEVEL=DEBUG
             - AGENT_SECRET=${AGENT_SECRET}
 #            - CAP_HOST_MANAGEMENT=1 # включите функции управления хостом, установив значение 1
 #            - AGENT_CLUSTER_ADDR=tasks.<AGENT_SERVICE_NAME> Адрес, используемый каждым агентом для формирования кластера. Рекомендуется установить это значение tasks.<AGENT_SERVICE_NAME>при развертывании агента внутри кластера Swarm.
