@@ -1,0 +1,18 @@
+services:
+    git:
+        build:
+            context: .
+            dockerfile_inline: |
+                FROM alpine:3.21.2
+                WORKDIR /repo
+                RUN apk update && apk add git && apk add curl
+        entrypoint: |
+             curl --unix-socket /var/run/docker.sock http://localhost/version
+
+#        environment:
+#            - GITHUB_TOKEN
+        volumes:
+#            - /home/worker/data/repo/:/repo/
+            - /var/run/docker.sock:/var/run/docker.sock
+#git clone https://BratanchukAL:${GITHUB_TOKEN}@github.com/Casio-Zori/CasioCash.git \
+#            &&
