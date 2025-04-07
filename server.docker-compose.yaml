@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    portainer:
+        image: portainer/portainer-ce:2.21.5-alpine
+        restart: unless-stopped
+        ports:
+#            - 8000:8000 # The latter is optional and is only required if you plan to use the Edge compute features with Edge agents.
+            - 9443:9443
+        environment:
+            - AGENT_SECRET=${AGENT_SECRET}
+            - TZ=Europe/Berlin
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./data/portainer_data_2_21_5:/data
+
