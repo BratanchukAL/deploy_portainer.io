@@ -25,3 +25,5 @@ Agent:
 P-1: server and agent
 
 P-2: dev CD на основе github
+
+P-3: run localhost
