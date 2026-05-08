@@ -11,6 +11,11 @@ Agent:
     
     docker compose --file agent.docker-compose.yaml  --env-file ./portainer.env  up -d --force-recreate --remove-orphans
 
+    docker compose --file agent.docker-compose.yaml down
+
+Agent-SWARM:
+    
+    docker stack deploy --compose-file ./agent.swarm.docker-compose.yaml --prune 
 
 ?Github/CD?
 
