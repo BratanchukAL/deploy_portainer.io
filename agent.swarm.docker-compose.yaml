@@ -4,6 +4,7 @@ services:
     portainer-agent:
         image: portainer/agent:2.21.5-alpine
         deploy:
+            #  setting deploy: mode: global ensures exactly one container task runs on every active node in the cluster.
             mode: global
             placement:
                 constraints:
